@@ -1,0 +1,27 @@
+<div *ngIf="user!==undefined">
+  <h3>User Detail Form</h3>
+  <div>
+    <mat-form-field appearance="standard">
+      <mat-label>{{user.name}}</mat-label>
+      <input matInput placeholder="{{user.name}}">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="standard">
+      <mat-label>{{user.username}}</mat-label>
+      <input matInput placeholder="{{user.username}}">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="standard">
+      <mat-label>{{user.address.street}}</mat-label>
+      <input matInput placeholder="{{user.address.street}}">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="standard">
+      <mat-label>{{user.address.city}}</mat-label>
+      <input matInput placeholder="{{user.address.city}}">
+    </mat-form-field>
+  </div>
+</div>
