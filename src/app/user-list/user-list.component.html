@@ -1,21 +1,23 @@
-<mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
-  <ng-container matColumnDef="name">
-    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.name}}</mat-cell>
-  </ng-container>
-  <ng-container matColumnDef="username">
-    <mat-header-cell *matHeaderCellDef> User Name </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.username}}</mat-cell>
-  </ng-container>
-  <ng-container matColumnDef="email">
-    <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.email}}</mat-cell>
-  </ng-container>
+<div style="display: flex; flex-grow: inherit;" class="flex-gap">
+  <mat-table #table [dataSource]="users$">
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef> User Name</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.username}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> Email</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.email}}</mat-cell>
+    </ng-container>
 
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getRecord(row.id)"></mat-row>
-</mat-table>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getRecord(row.id)"></mat-row>
+  </mat-table>
 
-<br/>
 
-<app-user-details [user]="user!"></app-user-details>
+  <app-user-details [user]="user$!"></app-user-details>
+
+</div>
